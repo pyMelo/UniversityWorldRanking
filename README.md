@@ -43,39 +43,81 @@ cd
 3            16         16         11           NaN       50   86.17  2012  
 4            37         22         22           NaN       18   85.21  2012
 ```
+
+
 ## Top 5 unviersità in Cwur dal 2012 al 2015
+![1_posizione-mondiale-top5_cwur.png](/images/1_posizione-mondiale-top5_cwur.png)
+
 ## BoxPlot metriche in Cwur
+![1_ranking_boxplot_cwur.png](/images/1_ranking_boxplot_cwur.png)
+
 ## SpiderWeb Top 5 università in Shanghai
+![1_topuni_spiderwab_shanghaidata.png](/images/1_topuni_spiderwab_shanghaidata.png)
+
 ## BoxPlot delle metriche in ShanghaiData
+![1_rankingmetrics_boxplot_shanghaidata.png](/images/1_rankingmetrics_boxplot_shanghaidata.png)
+
 ## Sistemando il Times
 Nel csv del Times sono presenti dei valori NaN che verranno sostituiti con la media in corrispettivo alla metrica.
 Inoltre abbiamo il peso delle varie metriche, è stato effettuato un ricalcolo del total_score.
+![metricsweight_dataset.png](/images/metricsweight_dataset.png)
+
 ### Differenza tra :
 - total_score originale
 - total_score stimato
+- 
 # :two:: Studio Università Italiane
+
 ## Ranking università italane vs USA
+![2_rankinguni_itavsUsa.png](/images/2_rankinguni_itavsUsa.png)
+
 ## Università Italiane presente in tutti e 3 gli studi
+
 ## SpiderWeb Top 5 Italiane vs Top 5 WorldWide (Times)
+![2_differencetop5ita_top5usa.png](/images/2_differencetop5ita_top5usa.png)
+
 ## Andamento della classifica Italiana durante gli anni
+
+### Cwur Data
+![2.4_andamento_cwurdata.png](/images/2.4_andamento_cwurdata.png)
+
 ### Times Data
+![2.4_andamento_timesData.png](/images/2.4_andamento_timesData.png)
+
 ## Shanghai Data
+![2.4_andamento_shanghaidata.png](/images/2.4_andamento_shanghaidata.png)
 E' stato fatto un piccolo "merge" con un altro CSV, aggiungendo la tabella "country" al csv princiapale associato alle università di quel posto, dato che non erano presenti i Paesi delle università.
 ## Dove peccano le università Italiane?
 ### Ranking in Cwur
+![2_worsemetrics_ita_cwur.png](/images/2_worsemetrics_ita_cwur.png)
+
 ### Score in Times
+![2_worstmetrics_ita_times.png](/images/2_worstmetrics_ita_times.png)
+
 ## E se cambiassimo una qualche metrica?
 Abbiamo preso la metrica peggiore in Times nelle università italiane e le abbiamo sostituite con il valore "99" per vedere quanto effettivamente cambiasse nella classifica.
+
+
 ## Ratio studenti Internazionali Top 3 USA vs Top 3 Italiane
+![2.8_ratio_internazionale.png](/images/2.8_ratio_internazionale.png)
+
 ## Ratio studentesse donne Top 3 USA vs Top 3 Italiane
-# Incidenza del mondo femminile nelle università (Times)
+![2.7_ratio_studentesse.png](/images/2.7_ratio_studentesse.png)
+
+
+# 3️⃣ Incidenza del mondo femminile nelle università (Times)
 Abbiamo convertito la colonna female_male ratio in "female_ratio".
+![3_correlation_females_worldrnak.png](/images/3_correlation_females_worldrnak.png)
+
+
 ## Effettuiamo una Regressione Lineare
 Cerchiamo di vedere se è presente una correlazione tra la percentuale di donne e qualche metrica.
-*Dopo l'immagine*
+![3_linearregression.png](/images/3_linearregression.png)
+
 Rimuovendo gli outliers riusciamo a trovare un valore di R-Squared:
 - Da 0.73 a 0.63 per income
 - Da 0.29 a 0.32 per citations
+  
 ## Predizione ranking mondiale e total score
 ### Predizione world rank delle università utilizzando le seguenti feature:
 - female_percentage
@@ -90,6 +132,7 @@ Rimuovendo gli outliers riusciamo a trovare un valore di R-Squared:
 *Dopo l'immagine*
 Abbiamo ottenuto due RMSE diversi.
 ### Matrice di correlazione
+![3_matrixcorrelation_females.png](/images/3_matrixcorrelation_females.png)
 
 ### Predizione Total_Score attraverso la feature: 
 - Female percentage
