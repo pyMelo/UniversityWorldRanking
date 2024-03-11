@@ -43,3 +43,55 @@ cd
 3            16         16         11           NaN       50   86.17  2012  
 4            37         22         22           NaN       18   85.21  2012
 ```
+## Top 5 unviersità in Cwur dal 2012 al 2015
+## BoxPlot metriche in Cwur
+## SpiderWeb Top 5 università in Shanghai
+## BoxPlot delle metriche in ShanghaiData
+## Sistemando il Times
+Nel csv del Times sono presenti dei valori NaN che verranno sostituiti con la media in corrispettivo alla metrica.
+Inoltre abbiamo il peso delle varie metriche, è stato effettuato un ricalcolo del total_score.
+### Differenza tra :
+- total_score originale
+- total_score stimato
+# :two:: Studio Università Italiane
+## Ranking università italane vs USA
+## Università Italiane presente in tutti e 3 gli studi
+## SpiderWeb Top 5 Italiane vs Top 5 WorldWide (Times)
+## Andamento della classifica Italiana durante gli anni
+### Times Data
+## Shanghai Data
+E' stato fatto un piccolo "merge" con un altro CSV, aggiungendo la tabella "country" al csv princiapale associato alle università di quel posto, dato che non erano presenti i Paesi delle università.
+## Dove peccano le università Italiane?
+### Ranking in Cwur
+### Score in Times
+## E se cambiassimo una qualche metrica?
+Abbiamo preso la metrica peggiore in Times nelle università italiane e le abbiamo sostituite con il valore "99" per vedere quanto effettivamente cambiasse nella classifica.
+## Ratio studenti Internazionali Top 3 USA vs Top 3 Italiane
+## Ratio studentesse donne Top 3 USA vs Top 3 Italiane
+# Incidenza del mondo femminile nelle università (Times)
+Abbiamo convertito la colonna female_male ratio in "female_ratio".
+## Effettuiamo una Regressione Lineare
+Cerchiamo di vedere se è presente una correlazione tra la percentuale di donne e qualche metrica.
+*Dopo l'immagine*
+Rimuovendo gli outliers riusciamo a trovare un valore di R-Squared:
+- Da 0.73 a 0.63 per income
+- Da 0.29 a 0.32 per citations
+## Predizione ranking mondiale e total score
+### Predizione world rank delle università utilizzando le seguenti feature:
+- female_percentage
+- teaching
+- international
+- research
+- citations
+- income
+### Predizione world rank attraverso le feature :
+- female_percentage
+- Italy (valore booleano 0 o 1)
+*Dopo l'immagine*
+Abbiamo ottenuto due RMSE diversi.
+### Matrice di correlazione
+
+### Predizione Total_Score attraverso la feature: 
+- Female percentage
+*dOPO L'IMMAGINE*
+Otteniamo un RMSE abbastanza basso, vediamo se riusciamo a trovare una causa-effetto aggiungendo la feature "international"
