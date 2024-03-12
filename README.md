@@ -141,9 +141,14 @@ Avendo 3 dataset/studi diversi che utilizzano metriche totalmente diverse abbiam
 
 ## Shanghai Data
 ![2.4_andamento_shanghaidata.png](/images/2.4_andamento_shanghaidata.png)
+
+
 E' stato fatto un piccolo "merge" con un altro CSV, aggiungendo la tabella "country" al csv princiapale associato alle università di quel posto, dato che non erano presenti i Paesi delle università.
+
+
 ## Dove peccano le università Italiane?
 Un'analisi a cui tenevo era vedere in che settore/ambito fossimo scadenti.
+
 Questa rappresentazione è data dal posto in classifica
 ### Ranking in Cwur
 
@@ -153,6 +158,8 @@ Questa rappresentazione è data dal posto in classifica
 In questi boxplot notiamo che la sezione brevetti è abbastanza debole anche se abbiamo degli outliers che spiccano verso le prime posizioni.
 
 ### Score in Times
+
+
 Questa rappresentazione è data dal punteggio.
 
 
