@@ -130,6 +130,8 @@ Italian Universities - CWUR Data:
 ![2_differencetop5ita_top5usa.png](/images/2_differencetop5ita_top5usa.png)
 
 ## Andamento della classifica Italiana durante gli anni
+Vediamo come le top università italaine sono presentate nella classifica.
+Avendo 3 dataset/studi diversi che utilizzano metriche totalmente diverse abbiamo un'andamento temporale abbastanza distinto.
 
 ### Cwur Data
 ![2.4_andamento_cwurdata.png](/images/2.4_andamento_cwurdata.png)
@@ -141,25 +143,67 @@ Italian Universities - CWUR Data:
 ![2.4_andamento_shanghaidata.png](/images/2.4_andamento_shanghaidata.png)
 E' stato fatto un piccolo "merge" con un altro CSV, aggiungendo la tabella "country" al csv princiapale associato alle università di quel posto, dato che non erano presenti i Paesi delle università.
 ## Dove peccano le università Italiane?
+Un'analisi a cui tenevo era vedere in che settore/ambito fossimo scadenti.
+Questa rappresentazione è data dal posto in classifica
 ### Ranking in Cwur
 ![2_worsemetrics_ita_cwur.png](/images/2_worsemetrics_ita_cwur.png)
+In questi boxplot notiamo che la sezione brevetti è abbastanza debole anche se abbiamo degli outliers che spiccano verso le prime posizioni.
 
 ### Score in Times
+Questa rappresentazione è data dal punteggio.
 ![2_worstmetrics_ita_times.png](/images/2_worstmetrics_ita_times.png)
+La metrica teaching e research sono abbastanza basse, proviamo a cambiare un qualcosa.
 
+Questo ci dice che l'insegnamento nelle università italiane non è delle migliori, anche se avrei qualcosa da ridire.
+```
+```
 ## E se cambiassimo una qualche metrica?
 Abbiamo preso la metrica peggiore in Times nelle università italiane e le abbiamo sostituite con il valore "99" per vedere quanto effettivamente cambiasse nella classifica.
 
+**Prima**
+```
+                             university_name country world_rank  total_score
+1915         Scuola Normale Superiore di Pisa   Italy        112         57.1
+1983               Scuola Superiore Sant’Anna   Italy       =180         50.2
+2000                     University of Trento   Italy        198         49.1
+2005                    University of Bologna   Italy    201-250         46.4
+2035          Polytechnic University of Milan   Italy    201-250         46.7
+2038              Sapienza University of Rome   Italy    201-250         44.5
+2124                      University of Milan   Italy    301-350         39.7
+2125              University of Milan-Bicocca   Italy    301-350         38.4
+2128         University of Naples Federico II   Italy    301-350         39.0
+2136                      University of Padua   Italy    301-350         40.5
+2137                      University of Pavia   Italy    301-350         38.6
+```
+**Dopo**
+```
+                            university_name country  world_rank  total_score
+45          Scuola Normale Superiore di Pisa   Italy          46         70.6
+51                      University of Trento   Italy          52         69.6
+60           Polytechnic University of Milan   Italy          61         67.4
+61                Scuola Superiore Sant’Anna   Italy          62         67.2
+73                     University of Bologna   Italy          73         64.3
+77               Sapienza University of Rome   Italy          78         62.8
+78                       University of Padua   Italy          79         62.5
+84                     University of Trieste   Italy          85         61.8
+87          University of Naples Federico II   Italy          88         61.3
+90                    University of Florence   Italy          91         61.2
+```
+Notiamo, ovviamente, una notevole differenza sia nella posizione in classifica sia al punteggio.
 
+Nonostante abbiamo la metrica dell'insegnamento abbastanza 
 ## Ratio studenti Internazionali Top 3 USA vs Top 3 Italiane
 ![2.8_ratio_internazionale.png](/images/2.8_ratio_internazionale.png)
 
 ## Ratio studentesse donne Top 3 USA vs Top 3 Italiane
 ![2.7_ratio_studentesse.png](/images/2.7_ratio_studentesse.png)
+Da qui otteniamo che una delle migliori università nel dataset del Times nell'anno del 2016 ha almeno più della metà di donne presenti.
 
 
 # 3️⃣ Incidenza del mondo femminile nelle università (Times)
-Abbiamo convertito la colonna female_male ratio in "female_ratio".
+Abbiamo convertito la colonna female_male ratio in "female_ratio" e abbiamo fatto un plot per vedere la correlazione delle donne sulle metriche :
+- world rank
+- ranking
 ![3_correlation_females_worldrnak.png](/images/3_correlation_females_worldrnak.png)
 
 
@@ -179,15 +223,95 @@ Rimuovendo gli outliers riusciamo a trovare un valore di R-Squared:
 - research
 - citations
 - income
+RMSE: 78.22348254847141
+Predizione di 5 università prese a caso prendendo come parametri : 
+female_percentage,teaching,international,research,citations,income :
+```
+
+Università: Isfahan University of Technology
+World Rank Iniziale: 534
+World Rank Predetto: 425.9864026934038
+---
+Università: Massachusetts Institute of Technology
+World Rank Iniziale: 7
+World Rank Predetto: -179.15766566460093
+---
+Università: University of Minho
+World Rank Iniziale: 555
+World Rank Predetto: 439.47330550774547
+---
+Università: Oregon State University
+World Rank Iniziale: 285
+World Rank Predetto: 313.71741551697244
+---
+Università: Massachusetts Institute of Technology
+World Rank Iniziale: 5
+World Rank Predetto: -185.91857603259461
+---
+```
+
 ### Predizione world rank attraverso le feature :
 - female_percentage
 - Italy (valore booleano 0 o 1)
+```
+RMSE su tutto il set di test: 176.87822162112585
+RMSE solo per le università italiane: 88.49229385575435
+
+Predizione di 5 università italiane prese a caso utilizzando le features 'female_percentage' e 'Italy':
+Università: University of Ferrara
+World Rank Iniziale: 382
+World Rank Predetto: 327.8474977166485
+---
+Università: University of Trento
+World Rank Iniziale: 273
+World Rank Predetto: 327.94663273831486
+---
+Università: University of Trieste
+World Rank Iniziale: 221
+World Rank Predetto: 327.8474977166485
+---
+Università: University of Milan-Bicocca
+World Rank Iniziale: 323
+World Rank Predetto: 327.7681896993154
+---
+Università: University of Catania
+World Rank Iniziale: 515
+World Rank Predetto: 327.7483626949822
+---
+```
+
 *Dopo l'immagine*
 Abbiamo ottenuto due RMSE diversi.
 ### Matrice di correlazione
 ![3_matrixcorrelation_females.png](/images/3_matrixcorrelation_females.png)
-
+Notiamo che non è presente nessuna severa correlazione con la *percentuale di donne*, proviamo ad indagare se esiste una causa-effetto con *international* e *citations*.
 ### Predizione Total_Score attraverso la feature: 
 - Female percentage
+```
+RMSE: 15.983725130323005
+Prediction for 5 randomly selected universities using the feature 'female_percentage' and 'total_score'
+female_percentage
+University: University of Modena and Reggio Emilia
+Total Score Initial: 27.0
+Total Score Predicted: 44.92990271211278
+---
+University: Montpellier University
+Total Score Initial: 39.3
+Total Score Predicted: 45.15031774253137
+---
+University: Johannes Kepler University of Linz
+Total Score Initial: 31.3
+Total Score Predicted: 45.37073277294997
+---
+University: University of Michigan
+Total Score Initial: 82.6
+Total Score Predicted: 45.37073277294997
+---
+University: University of Canterbury
+Total Score Initial: 37.3
+Total Score Predicted: 45.15031774253137
+---
+```
+
 *dOPO L'IMMAGINE*
 Otteniamo un RMSE abbastanza basso, vediamo se riusciamo a trovare una causa-effetto aggiungendo la feature "international"
