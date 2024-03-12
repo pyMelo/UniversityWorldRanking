@@ -129,6 +129,9 @@ Italian Universities - CWUR Data:
 ## SpiderWeb Top 5 Italiane vs Top 5 WorldWide (Times)
 ![2_differencetop5ita_top5usa.png](/images/2_differencetop5ita_top5usa.png)
 
+![2_differentopITA.png](/images/2_differentopITA.png)
+
+
 ## Andamento della classifica Italiana durante gli anni
 Vediamo come le top università italaine sono presentate nella classifica.
 Avendo 3 dataset/studi diversi che utilizzano metriche totalmente diverse abbiamo un'andamento temporale abbastanza distinto.
@@ -224,8 +227,11 @@ Abbiamo convertito la colonna female_male ratio in "female_ratio" e abbiamo fatt
 - world rank
 - ranking
 
-
+**Correlazione con world rank**
 ![3_correlation_females_worldrnak.png](/images/3_correlation_females_worldrnak.png)
+
+**Correlazione con total score**
+![3_correlatioTWO.png](/images/3_correlatioTWO.png)
 
 
 ## Effettuiamo una Regressione Lineare
