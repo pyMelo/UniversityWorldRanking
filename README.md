@@ -147,6 +147,7 @@ Un'analisi a cui tenevo era vedere in che settore/ambito fossimo scadenti.
 Questa rappresentazione è data dal posto in classifica
 ### Ranking in Cwur
 ![2_worsemetrics_ita_cwur.png](/images/2_worsemetrics_ita_cwur.png)
+
 In questi boxplot notiamo che la sezione brevetti è abbastanza debole anche se abbiamo degli outliers che spiccano verso le prime posizioni.
 
 ### Score in Times
