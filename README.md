@@ -146,13 +146,19 @@ E' stato fatto un piccolo "merge" con un altro CSV, aggiungendo la tabella "coun
 Un'analisi a cui tenevo era vedere in che settore/ambito fossimo scadenti.
 Questa rappresentazione è data dal posto in classifica
 ### Ranking in Cwur
+
 ![2_worsemetrics_ita_cwur.png](/images/2_worsemetrics_ita_cwur.png)
+
 
 In questi boxplot notiamo che la sezione brevetti è abbastanza debole anche se abbiamo degli outliers che spiccano verso le prime posizioni.
 
 ### Score in Times
 Questa rappresentazione è data dal punteggio.
+
+
 ![2_worstmetrics_ita_times.png](/images/2_worstmetrics_ita_times.png)
+
+
 La metrica teaching e research sono abbastanza basse, proviamo a cambiare un qualcosa.
 
 Questo ci dice che l'insegnamento nelle università italiane non è delle migliori, anche se avrei qualcosa da ridire.
@@ -194,10 +200,15 @@ Notiamo, ovviamente, una notevole differenza sia nella posizione in classifica s
 
 Nonostante abbiamo la metrica dell'insegnamento abbastanza 
 ## Ratio studenti Internazionali Top 3 USA vs Top 3 Italiane
+
+
 ![2.8_ratio_internazionale.png](/images/2.8_ratio_internazionale.png)
 
 ## Ratio studentesse donne Top 3 USA vs Top 3 Italiane
 ![2.7_ratio_studentesse.png](/images/2.7_ratio_studentesse.png)
+
+
+
 Da qui otteniamo che una delle migliori università nel dataset del Times nell'anno del 2016 ha almeno più della metà di donne presenti.
 
 
@@ -205,29 +216,38 @@ Da qui otteniamo che una delle migliori università nel dataset del Times nell'a
 Abbiamo convertito la colonna female_male ratio in "female_ratio" e abbiamo fatto un plot per vedere la correlazione delle donne sulle metriche :
 - world rank
 - ranking
+
+
 ![3_correlation_females_worldrnak.png](/images/3_correlation_females_worldrnak.png)
 
 
 ## Effettuiamo una Regressione Lineare
 Cerchiamo di vedere se è presente una correlazione tra la percentuale di donne e qualche metrica.
+
+
 ![3_linearregression.png](/images/3_linearregression.png)
 
 Rimuovendo gli outliers riusciamo a trovare un valore di R-Squared:
+
 - Da 0.73 a 0.63 per income
 - Da 0.29 a 0.32 per citations
   
 ## Predizione ranking mondiale e total score
+
 ### Predizione world rank delle università utilizzando le seguenti feature:
+
 - female_percentage
 - teaching
 - international
 - research
 - citations
 - income
+
+
+```
 RMSE: 78.22348254847141
 Predizione di 5 università prese a caso prendendo come parametri : 
 female_percentage,teaching,international,research,citations,income :
-```
 
 Università: Isfahan University of Technology
 World Rank Iniziale: 534
@@ -254,6 +274,8 @@ World Rank Predetto: -185.91857603259461
 ### Predizione world rank attraverso le feature :
 - female_percentage
 - Italy (valore booleano 0 o 1)
+
+
 ```
 RMSE su tutto il set di test: 176.87822162112585
 RMSE solo per le università italiane: 88.49229385575435
@@ -281,13 +303,24 @@ World Rank Predetto: 327.7483626949822
 ---
 ```
 
-*Dopo l'immagine*
 Abbiamo ottenuto due RMSE diversi.
+
+
 ### Matrice di correlazione
+
 ![3_matrixcorrelation_females.png](/images/3_matrixcorrelation_females.png)
+
+
 Notiamo che non è presente nessuna severa correlazione con la *percentuale di donne*, proviamo ad indagare se esiste una causa-effetto con *international* e *citations*.
+
+
+
 ### Predizione Total_Score attraverso la feature: 
+
 - Female percentage
+
+
+
 ```
 RMSE: 15.983725130323005
 Prediction for 5 randomly selected universities using the feature 'female_percentage' and 'total_score'
@@ -314,5 +347,4 @@ Total Score Predicted: 45.15031774253137
 ---
 ```
 
-*dOPO L'IMMAGINE*
 Otteniamo un RMSE abbastanza basso, vediamo se riusciamo a trovare una causa-effetto aggiungendo la feature "international"
