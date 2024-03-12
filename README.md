@@ -47,14 +47,18 @@ cd
 
 ## Top 5 unviersità in Cwur dal 2012 al 2015
 ![1_posizione-mondiale-top5_cwur.png](/images/1_posizione-mondiale-top5_cwur.png)
-
+Harvard 1° in classifica per tutto il corso degli anni. C'era da aspettarselo
 ## BoxPlot metriche in Cwur
+Per vedere come si distinguono in alcuni paesi le metriche abbiamo usato il BoxPlot per farci un'idea.
 ![1_ranking_boxplot_cwur.png](/images/1_ranking_boxplot_cwur.png)
+Notiamo delle anomalie per le università negli USA, la maggior parte peccano in alcune metriche, però ci sono dei casi che si presentano nelle prime posizioni.
 
 ## SpiderWeb Top 5 università in Shanghai
 ![1_topuni_spiderwab_shanghaidata.png](/images/1_topuni_spiderwab_shanghaidata.png)
+Harvard ha quasi tutte le metriche di valutazione al massimo.
 
 ## BoxPlot delle metriche in ShanghaiData
+Questo BoxPlot invece della posizione in classifica si utilizza lo score.
 ![1_rankingmetrics_boxplot_shanghaidata.png](/images/1_rankingmetrics_boxplot_shanghaidata.png)
 
 ## Sistemando il Times
@@ -64,15 +68,64 @@ Inoltre abbiamo il peso delle varie metriche, è stato effettuato un ricalcolo d
 
 ### Differenza tra :
 - total_score originale
+```
+University Original Total Score  \
+0                        Harvard University                 96.1   
+1        California Institute of Technology                 96.0   
+2     Massachusetts Institute of Technology                 95.6  
+```
 - total_score stimato
-- 
+```
+      Modified Total Score  
+0                     95.5  
+1                     94.9  
+2                     95.1 
+```
+
 # :two:: Studio Università Italiane
 
 ## Ranking università italane vs USA
 ![2_rankinguni_itavsUsa.png](/images/2_rankinguni_itavsUsa.png)
 
 ## Università Italiane presente in tutti e 3 gli studi
-
+Shanghai Dataset
+```
+Italian Universities - Shanghai Data (Italian universities do not have scores):
+                              university_name world_rank  total_score
+141                       University of Milan    101-152          NaN
+143                        University of Pisa    101-152          NaN
+192                       University of Padua    153-202          NaN
+197                       University of Turin    153-202          NaN
+256                     University of Bologna    203-300          NaN
+263                    University of Florence    203-300          NaN
+```
+Times Dataset
+```
+Italian Universities - Times Data:
+                              university_name world_rank  total_score
+441                     University of Bologna    226-250         35.5
+444                       University of Milan    226-250         37.3
+445               University of Milan-Bicocca    226-250         37.3
+447                       University of Padua    226-250         35.3
+448                     University of Trieste    226-250         36.1
+499                      University of Trento    276-300         33.0
+519           Polytechnic University of Milan    301-350         26.9
+520               Sapienza University of Rome    301-350         29.0
+528                     University of Ferrara    301-350         30.4
+```
+Cwur Dataset
+```
+Italian Universities - CWUR Data:
+                                           institution  world_rank  score
+76                         Sapienza University of Rome          77  46.34
+380                                University of Milan         181  48.48
+383                                University of Padua         184  48.40
+418                              University of Bologna         219  47.59
+430                                University of Turin         231  47.40
+465                             University of Florence         266  46.80
+471                   University of Naples Federico II         272  46.67
+507                                 University of Pisa         308  46.30
+```
 ## SpiderWeb Top 5 Italiane vs Top 5 WorldWide (Times)
 ![2_differencetop5ita_top5usa.png](/images/2_differencetop5ita_top5usa.png)
 
