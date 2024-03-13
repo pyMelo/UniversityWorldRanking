@@ -1,6 +1,9 @@
 # University World Ranking
-Questo progetto si basa su un'analisi approfondita del dataset sul ranking delle università mondiale.
+<div style="text-align:center;">
+    <img src="/images/_c95b8779-e6f0-4e51-8cf5-0b7fffe33b33-removebg-preview.png" alt="logo">
+</div>
 
+Questo progetto si basa su un'analisi approfondita del dataset sul ranking delle università mondiale.
 All'interno di esso troviamo vari tipi di classificazioni delle università come :
 - **Cwur** (Central for World University Ranking): Si tratta di un'organizzazione indipendente con sede negli _Emirati Arabi uniti_.
 Valuta le università in base alla qualità di insegnamento, qualità del corpo docente, impatto della ricerca e altro.
