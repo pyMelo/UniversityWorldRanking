@@ -1,4 +1,4 @@
-# University World Ranking
+#🧢 University World Ranking
 <div style="display: flex; justify-content: center;">
     <img src="/images/_c95b8779-e6f0-4e51-8cf5-0b7fffe33b33-removebg-preview.png" alt="logo">
 </div>
@@ -363,5 +363,32 @@ Otteniamo un RMSE abbastanza basso, vediamo se riusciamo a trovare una causa-eff
 
 Notiamo che non è presente nessuna severa correlazione con la *percentuale di donne*, proviamo ad indagare se esiste una causa-effetto con *international* e *citations*.
 
+## Analisi Causale
+Distribuzione della correlazione
+![3_correlation_females_worldrnak.png](/images/3_distribution.png)
+
+Vogliamo vedere se esiste una correlazione tra queste variabile e una causa-effetto per il quale **total_score** vari.
+- female_percentage
+- income
 
 
+![3_matrixSMALL.png](/images/3_matrixSMALL.png)
+
+La variazione di *total score*:
+
+Se female_percentage aumenta di una unità, *total score* aumenta di **0.02905126**
+- una maggiore presenza femminile è associata a un leggero aumento del punteggio totale.
+
+
+Se income aumenta di una unità , *total score* aumenta di  **0.15677339** 
+- un reddito più alto è associato a un aumento del punteggio totale
+
+
+Creo un modello che stima l'effetto di *female_percentage* su *income*
+Calcolo il coefficiente di *female_percentage* che rappresenta la variazione di income associata a un aumento di *female_percentage* di 1 punto percentuale.
+
+Successivamente viene moltiplicato il coefficiente precedente per l'effetto di *income* su *total_score*.
+Si otterrà un effetto indiretto di *female_percentage* su *total_score* attraverso **income**
+Esso rappresenterà la variazioen di total score dovuta all'effetto di **female_percentage su income**.
+
+Effetto indiretto: -0.10425417991302567
