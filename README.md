@@ -1,4 +1,5 @@
-#🧢 University World Ranking
+# University World Ranking 🧢
+
 <div style="display: flex; justify-content: center;">
     <img src="/images/_c95b8779-e6f0-4e51-8cf5-0b7fffe33b33-removebg-preview.png" alt="logo">
 </div>
