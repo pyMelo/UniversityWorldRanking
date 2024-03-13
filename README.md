@@ -321,16 +321,6 @@ World Rank Predetto: 327.7483626949822
 
 Abbiamo ottenuto due RMSE diversi.
 
-
-### Matrice di correlazione
-
-![3_matrixcorrelation_females.png](/images/3_matrixcorrelation_females.png)
-
-
-Notiamo che non è presente nessuna severa correlazione con la *percentuale di donne*, proviamo ad indagare se esiste una causa-effetto con *international* e *citations*.
-
-
-
 ### Predizione Total_Score attraverso la feature: 
 
 - Female percentage
@@ -364,3 +354,14 @@ Total Score Predicted: 45.15031774253137
 ```
 
 Otteniamo un RMSE abbastanza basso, vediamo se riusciamo a trovare una causa-effetto aggiungendo la feature "international"
+
+
+### Matrice di correlazione
+
+![3_matrixcorrelation_females.png](/images/3_matrixcorrelation_females.png)
+
+
+Notiamo che non è presente nessuna severa correlazione con la *percentuale di donne*, proviamo ad indagare se esiste una causa-effetto con *international* e *citations*.
+
+
+
