@@ -388,7 +388,14 @@ Vogliamo vedere se esiste una correlazione tra queste variabile e una causa-effe
 
   Il valore è di 0.25, un aumento dell'*income* che è associato a un aumento del *total score*
 
-### Coefficiente di Income in nella regressione multipla : 0.27174049544938467
+### Coefficiente di Income in nella regressione multipla :
 
   Questo coefficiente è del 0.27 ed indica che c'è un aumento significativo nel *total score* all'aumentare dell'*income*.
 
+### RMSE
+
+RMSE (female e total score) Simple Regression: 15.983
+RMSE (income e total score) Simple Regression: 15.174
+RMSE for Multiple Regression: 15.023
+
+Potremmo escludere il fatto di utilizzare female percentage e trovare delle feature che migliorebbero l'RMSE per la predizione del total_score.
