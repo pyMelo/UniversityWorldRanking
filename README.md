@@ -366,7 +366,6 @@ Notiamo che non è presente nessuna severa correlazione con la *percentuale di d
 
 ## Analisi Causale
 Distribuzione della correlazione
-![3_correlation_females_worldrnak.png](/images/3_distribution.png)
 
 Vogliamo vedere se esiste una correlazione tra queste variabile e una causa-effetto per il quale **total_score** vari.
 - female_percentage
@@ -375,21 +374,21 @@ Vogliamo vedere se esiste una correlazione tra queste variabile e una causa-effe
 
 ![3_matrixSMALL.png](/images/3_matrixSMALL.png)
 
-La variazione di *total score*:
+### Coefficiente Female Percentage nella regressione semplice:
 
-Se female_percentage aumenta di una unità, *total score* aumenta di **0.02905126**
-- una maggiore presenza femminile è associata a un leggero aumento del punteggio totale.
+  Un aumento dell'1% delle donne influisce a una diminuizione di 0.073
+ 
+### Coefficient di Female Percentage nella regressione multipla:
 
+  Nel modello di regressione multipla, il coefficiente per 'female_percentage' è 0.0973.
+  Questo ci dice che, quando viene considerato anche l'*income*, c'è un lieve aumento nel punteggio totale al crescere della *percentuale di donne*.
 
-Se income aumenta di una unità , *total score* aumenta di  **0.15677339** 
-- un reddito più alto è associato a un aumento del punteggio totale
+  
+### Coefficiente di Income nella regressione semplice :
 
+  Il valore è di 0.25, un aumento dell'*income* che è associato a un aumento del *total score*
 
-Creo un modello che stima l'effetto di *female_percentage* su *income*
-Calcolo il coefficiente di *female_percentage* che rappresenta la variazione di income associata a un aumento di *female_percentage* di 1 punto percentuale.
+### Coefficiente di Income in nella regressione multipla : 0.27174049544938467
 
-Successivamente viene moltiplicato il coefficiente precedente per l'effetto di *income* su *total_score*.
-Si otterrà un effetto indiretto di *female_percentage* su *total_score* attraverso **income**
-Esso rappresenterà la variazioen di total score dovuta all'effetto di **female_percentage su income**.
+  Questo coefficiente è del 0.27 ed indica che c'è un aumento significativo nel *total score* all'aumentare dell'*income*.
 
-Effetto indiretto: -0.10425417991302567
